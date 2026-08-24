@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware 
+from core.config import settings 
 
 app=FastAPI(
     title="Choose-Your-Adventure-Game-API",
@@ -12,7 +13,7 @@ app=FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_methods=["*"],
-    allow_origins=["*"],
+    allow_origins=settings.ALLOWED_ORIGINS,
     allow_headers=["*"],
     allow_credentials=True,
 )
