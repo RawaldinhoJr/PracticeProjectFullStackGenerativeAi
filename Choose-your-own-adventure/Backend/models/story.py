@@ -16,3 +16,4 @@ class Story(Base):
         __tablename__ = "story_nodes"
 
         id = Column(Integer, primary_key=True, index=True)
+        story_id= Column(Integer, ForeignKey("stories.id"))
