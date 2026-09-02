@@ -14,7 +14,7 @@ class Story(Base): #Story Table for the main story (The story from the initial p
 
     nodes=relationship("StoryNodes", back_populates="story")
 
-    class StoryNode(Base): #Story Nodes are 
+    class StoryNode(Base): #Story Nodes are individual chapters from the main story
         __tablename__ = "story_nodes"
 
         id = Column(Integer, primary_key=True, index=True)
