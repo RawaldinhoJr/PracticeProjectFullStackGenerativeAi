@@ -24,3 +24,4 @@ class Story(Base): #Story Table for the main story (The story from the initial p
         is_ending= Column(Boolean, default=False) # losing endiing node
         is_winning_ending= Column(Boolean, default=False) #if this is the node which wins u the whole adventure 
 
+        story= relationship("Story", back_populates="nodes") 
