@@ -12,7 +12,7 @@ class Story(Base): #Story Table for the main story (The story from the initial p
     session_id=Column (String, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    nodes=relationship("StoryNodes", back_populates="story")
+    nodes=relationship("StoryNode", back_populates="Story")
 
     class StoryNode(Base): #Story Nodes are individual chapters from the main story
         __tablename__ = "story_nodes"
