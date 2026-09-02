@@ -17,9 +17,10 @@ class Story(Base): #Story Table for the main story (The story from the initial p
     class StoryNode(Base): #Story Nodes are individual chapters from the main story
         __tablename__ = "story_nodes"
 
-        id = Column(Integer, primary_key=True, index=True)
-        story_id= Column(Integer, ForeignKey("stories.id"))
+        id = Column(Integer, primary_key=True, index=True) 
+        story_id= Column(Integer, ForeignKey("stories.id")) 
         content= Column(String)
-        is_root= Column(Boolean, default=False)
-        is_root= Column(Boolean, default=False)
-        is_winning_ending= Column(Boolean, default=False)
+        is_root= Column(Boolean, default=False) #if this is the first node
+        is_ending= Column(Boolean, default=False) # losing endiing node
+        is_winning_ending= Column(Boolean, default=False) #if this is the node which wins u the whole adventure 
+        
